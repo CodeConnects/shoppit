@@ -19,13 +19,24 @@ console.log('Yargs', argv);
 
 // process terminal commands
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log(`Added note "${note.title}": "${note.body}"`);
+    } else {
+        console.log(`A note with the title of "${argv.title}" already exists. Please add your note again using a different title.`);
+    }
+    //console.log(note);
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
     notes.getNote(argv.title);
 } else if (command === 'delete') {
-    notes.deleteNote(argv.title);
+    var noteRemoved = notes.deleteNote(argv.title);
+    if(noteRemoved) {
+        console.log(`The note with title "${argv.title}" was successfully deleted.`);
+    } else {
+        console.log(`Nothing was deleted, a note with the title of "${argv.title}" was not found.`)
+    }
 } else {
     console.log('Command not found');
 }
