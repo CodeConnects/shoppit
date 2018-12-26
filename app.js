@@ -25,11 +25,16 @@ if (command === 'add') {
     } else {
         console.log(`A note with the title of "${argv.title}" already exists. Please add your note again using a different title.`);
     }
-    //console.log(note);
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    notes.getNote(argv.title);
+    var note = notes.getNote(argv.title);
+    if (note) {
+        console.log(`Note title: "${note.title}"`);
+        console.log(`Note body: "${note.body}"`);
+    } else {
+        console.log(`No note with the title of "${argv.title}" was found.`);
+    }
 } else if (command === 'delete') {
     var noteRemoved = notes.deleteNote(argv.title);
     if(noteRemoved) {
