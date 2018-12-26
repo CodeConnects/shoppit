@@ -1,5 +1,3 @@
-console.log('Starting app.js');
-
 // node modules
 const fs = require('fs');
 const lodash = require('lodash');
@@ -9,12 +7,34 @@ const yargs = require('yargs');
 const notes = require('./notes.js');
 
 
-// console logging of arguments
-const argv = yargs.argv;
+// set up command variables using yargs
+const titleOptions = {
+    describe: 'Title of the note',
+    demand: true,
+    alias: 't'
+};
+const bodyOptions = {
+    describe: 'Content of the note',
+    demand: true,
+    alias: 'b'
+};
+
+const argv = yargs
+    .command('add', 'Add a new note', {
+        title: titleOptions,
+        body: bodyOptions
+    })
+    .command('list', 'List all notes')
+    .command('read', 'Read a single note', {
+        title: titleOptions
+    })
+    .command('delete', 'Delete a single note', {
+        title: titleOptions
+    })
+    .help()
+    .argv;
+
 var command = argv._[0];
-console.log('Command: ', command);
-console.log('Process', process.argv);
-console.log('Yargs', argv);
 
 
 // process terminal commands
@@ -26,7 +46,16 @@ if (command === 'add') {
         console.log(`A note with the title of "${argv.title}" already exists. Please add your note again using a different title.`);
     }
 } else if (command === 'list') {
-    notes.getAll();
+    var allNotes = notes.getAll();
+    console.log(`\nListing ${allNotes.length} note(s):\n`);
+    allNotes.forEach( (note, i) => {
+        console.log(`Note #${i+1}:`);
+        console.log(`Note title: "${note.title}"`);
+        console.log(`Note body: "${note.body}"`);
+        console.log('-----\n');
+    });
+    console.log('End of the list!\n');
+
 } else if (command === 'read') {
     var note = notes.getNote(argv.title);
     if (note) {
