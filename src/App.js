@@ -28,7 +28,7 @@ const App = () => {
     <div className="categories-wrap">
       {categories.map((category) => (
         <div className="single-category" key={category.id}>
-          <img src="https://via.placeholder.com/150" alt="category" />
+          <div className="category-bg-img" />
           <div className="single-category-body">
             <h3>{category.title} {category.id}</h3>
             <p>shoppit</p>
