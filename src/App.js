@@ -1,3 +1,5 @@
+import Category from './components/category/category.jsx';
+
 import './categories.styles.scss';
 
 const App = () => {
@@ -34,18 +36,11 @@ const App = () => {
     <div className='categories-wrap'>
       
       {categories.map((category) => (
-        
-        <div key={category.id} className='single-category'>
-          <div className='category-bg-img'  style={{
-            backgroundImage: `url(${category.image})`
-          }} />
-          
-          <div className='single-category-body'>
-            <h3>{category.title}</h3>
-            <p>lorem ipsum dolor sit amet, consectetur.</p>
-          </div>
-        </div>
-
+        <Category
+          key={category.id}
+          title={category.title}
+          image={category.image}
+        />
       ))}
   
     </div>
