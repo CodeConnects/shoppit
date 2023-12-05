@@ -1,4 +1,4 @@
-import Catalog from '../../components/catalog/catalog.jsx';
+import Catalog from '../../components/Catalog/Catalog.jsx';
 
 const Home = () => {
   return (

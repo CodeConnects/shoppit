@@ -1,6 +1,6 @@
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import Home from './routes/home/home.jsx';
+import Home from './routes/Home/Home.jsx';
 
 const Navbar = () => {
   return (
@@ -43,9 +43,9 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={ <Navbar /> }>
-        <Route path="/" element={ <Home /> } />
-        <Route path="/cart" element={ <Cart /> } />
-        <Route path="/about" element={ <About /> } />
+        <Route index element={ <Home /> } />
+        <Route path="cart" element={ <Cart /> } />
+        <Route path="about" element={ <About /> } />
       </Route>
     </Routes>
   );

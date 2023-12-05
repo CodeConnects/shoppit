@@ -1,6 +1,6 @@
-import Category from '../category/category.jsx';
+import Category from '../Category/Category.jsx';
 
-import './catalog.scss';
+import './Catalog.scss';
 
 const Catalog = () => {
   

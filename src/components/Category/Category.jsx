@@ -1,4 +1,4 @@
-import './category.scss';
+import './Category.scss';
 
 const Category = ({ title, image }) => (
   <div className='single-category'>
