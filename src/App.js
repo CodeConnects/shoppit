@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './routes/Navbar/Navbar.jsx';
 import Home from './routes/Home/Home.jsx';
+import SignIn from './routes/SignIn/SignIn.jsx';
 
 const Cart = () => {
   return (
@@ -24,8 +25,9 @@ const App = () => {
     <Routes>
       <Route path="/" element={ <Navbar /> }>
         <Route index element={ <Home /> } />
-        <Route path="cart" element={ <Cart /> } />
         <Route path="about" element={ <About /> } />
+        <Route path="sign-in" element={ <SignIn /> } />
+        <Route path="cart" element={ <Cart /> } />
       </Route>
     </Routes>
   );
