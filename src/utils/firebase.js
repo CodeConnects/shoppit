@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { 
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInGooglePopup,
 } from "firebase/auth";
 import {
   doc,
@@ -34,7 +34,7 @@ const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
 export const auth = getAuth();
-export const signInWithGoogle = () => signInWithPopup(auth, provider);
+export const signInGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore(fireApp);
 

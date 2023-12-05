@@ -1,12 +1,13 @@
 import { 
-  signInWithGoogle,
+  signInGooglePopup,
   createUserProfileDoc
 } from "../../utils/firebase";
 
 const SignIn = () => {
+  
   const handleSignIn = async () => {
     try {
-      const { user } = await signInWithGoogle();
+      const { user } = await signInGooglePopup();
       const userRef = await createUserProfileDoc(user);
     } catch (error) {
       console.log(error);
