@@ -1,6 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
 import { ReactComponent as HomeLogo } from '../../assets/blue-house.svg';
-// import { ReactComponent as HomeLogo } from '../../assets/red-house.svg';
 
 import './Navbar.scss';
 
@@ -15,8 +14,9 @@ const Navbar = () => {
         
         <div className='page-links'>
           <Link to="/shop">Shop</Link>
-          <Link to="/cart">Cart</Link>
           <Link to="/about">About</Link>
+          <Link to="/sign-in">Sign In</Link>
+          <Link to="/cart">Cart</Link>
         </div>
 
       </nav>
