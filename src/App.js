@@ -20,11 +20,20 @@ const About = () => {
   );
 }
 
+const Shop = () => {
+  return (
+    <div>
+      <h1>Shop All Products</h1>
+    </div>
+  );
+}
+
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={ <Navbar /> }>
         <Route index element={ <Home /> } />
+        <Route path="shop" element={ <Shop /> } />
         <Route path="about" element={ <About /> } />
         <Route path="sign-in" element={ <SignIn /> } />
         <Route path="cart" element={ <Cart /> } />
