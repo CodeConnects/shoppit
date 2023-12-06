@@ -9,3 +9,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.error-msg {
+  background: yellow;
+  padding: 6px;
+  color: red;
+  font-weight: bold;
+}
+
+.success-msg {
+  background: rgb(6, 171, 6);
+  padding: 6px;
+  color: white;
+  font-weight: bold;
+}
