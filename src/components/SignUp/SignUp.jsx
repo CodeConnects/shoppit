@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createUserEmailPswd, createUserProfileDoc } from "../../utils/firebase";
 import FormInput from "../FormInput/FormInput.jsx";
+import Button from "../Button/Button.jsx";
 
 import "./SignUp.scss";
 
@@ -99,7 +100,7 @@ const SignUp = () => {
           value={confirmPassowrd}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
 
       {success && <p><span className="success-msg">{success}</span></p>}
